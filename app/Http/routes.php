@@ -26,6 +26,7 @@ Route::controllers([
 ]);
 
 Route::controllers(['learn' => 'LearnLaravelController']);
+Route::controllers(['find' => 'search\IndexController']);
 
 Route::group(['prefix'=>'backend','middleware'=>'auth'],function(){
     Route::any('/','backend\HomeController@index');
