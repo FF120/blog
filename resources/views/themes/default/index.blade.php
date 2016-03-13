@@ -18,6 +18,7 @@
                 @if(empty($auth))
                     <a href="{{url('backend/auth/login')}}" class=" site-header-nav-item" target="" title="Login">Login</a>
                 @elseif(!empty($auth))
+                    <a href="{{url('backend/article/create')}}" class=" site-header-nav-item" target="" title="write_article">写文章</a>
                     <a href="{{url('backend/auth/logout')}}" class=" site-header-nav-item" target="" title="Login">Logout</a>
                 @endif
                 <a href="/" class=" site-header-nav-item" target="" title="Home">Home</a>
