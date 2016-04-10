@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://v3.bootcss.com/favicon.ico">
 
-    <title>搜索结果页面</title>
+    <title>SEARCH-ALL</title>
     <!-- Bootstrap core CSS -->
     <link href="{{asset('/css/search/search_result/bootstrap.min.css')}}" rel="stylesheet">
 
@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://v3.bootcss.com/examples/dashboard/#">Project name</a>
+          <a class="navbar-brand" href="http://my.blog.com/find/result">SEARCH_ALL</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -42,8 +42,8 @@
             <li><a href="http://v3.bootcss.com/examples/dashboard/#">Profile</a></li>
             <li><a href="http://v3.bootcss.com/examples/dashboard/#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input id="search" type="text" class="form-control" placeholder="Search...">
+          <form style="width:60%" action="JavaScript:baidu()" class="navbar-form navbar-left">
+            <input style="width:100%" id="search" type="text" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>
@@ -55,30 +55,30 @@
           <ul class="nav nav-sidebar" id="sousuo">
             <li class="active"><a href="JavaScript:baidu()">百度<span class="sr-only">(current)</span></a></li>
             <li><a href="JavaScript:bing()">必应</a></li>
-            <li><a href="JavaScript:sougou()">搜狗</a></li>
             <li><a href="JavaScript:s360()">360</a></li>
+            <li><a href="JavaScript:sougou()">搜狗</a></li>
+
             <li><a href="JavaScript:Google()">Google</a></li>
-            <li><a href="http://v3.bootcss.com/examples/dashboard/#">雅虎</a></li>
+            <li><a href="JavaScript:Yahoo()">雅虎</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><a href="JavaScript:GooglePaper()">谷歌学术</a></li>
+            <li><a href="JavaScript:BingPaper()">必应学术</a></li>
+            <li><a href="JavaScript:BaiduPaper()">百度学术</a></li>
+            <li><a href="JavaScript:CnkiPaper()">知网学术</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
+            <li><a href="JavaScript:BaiduTranslate()">百度翻译</a></li>
+            <li><a href="JavaScript:CnkiTranslate()">知网翻译</a></li>
+            <li><a href="JavaScript:GoogleTranslate()">谷歌翻译</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <!--<h1 class="page-header">Dashboard</h1>-->
-          <!--在这里嵌入百度搜索的内容-->
+          <!---->
           <div class="soso" id="innerHTML">
-            <iframe style="display: inline-block" id="baidu" frameborder=0 width="1090" height="700" src="http://cn.bing.com/"></iframe>
-            <iframe style="display: none" id="Google" frameborder=0 width="1090" height="700" src="http://www.baidu.com/"></iframe>
+            <iframe  onLoad="JavaScript:changeFrameHeight()" style="display: inline-block" id="baidu" frameborder=0 width="1400" height="100%" src="http://www.baidu.com"></iframe>
+            <iframe style="display: none" id="bing" frameborder=0 width="1090" height="700" src=""></iframe>
           </div>
         </div>
       </div>
@@ -97,14 +97,11 @@
 <div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;"><div id="trans-tooltip"><div id="tip-left-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-top.png&quot;);"></div><div id="tip-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-top.png&quot;) repeat-x;"></div><div id="tip-right-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-top.png&quot;);"></div><div id="tip-right" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right.png&quot;) repeat-y;"></div><div id="tip-right-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-right-bottom.png&quot;);"></div><div id="tip-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-bottom.png&quot;) repeat-x;"></div><div id="tip-left-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left-bottom.png&quot;);"></div><div id="tip-left" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-left.png&quot;);"></div><div id="trans-content"></div></div><div id="tip-arrow-bottom" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-bottom.png&quot;);"></div><div id="tip-arrow-top" style="background: url(&quot;chrome-extension://ikkbfngojljohpekonpldkamedehakni/imgs/map/tip-arrow-top.png&quot;);"></div></div>
   </body>
 <script>
+    //搜索引擎
     function baidu(){
-//      var url = "https://www.baidu.com/s?wd=";
-//      var search = document.getElementById('search').value;
-//      var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
-
-      var ee = document.getElementById('baidu').parentNode;
-      dump(ee);
-
+      var url = "https://www.baidu.com/s?wd=";
+      var search = document.getElementById('search').value;
+      var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
     }
     function bing(){
       var url = "http://cn.bing.com/search?q=";
@@ -121,5 +118,68 @@
       var search = document.getElementById('search').value;
       var sougouFrame = document.getElementById('baidu').setAttribute("src" , url+search);
     }
+    function Google(){
+      var url = "https://www.google.com/#newwindow=1&q=";
+      var search = document.getElementById('search').value;
+      window.open(url+search);
+    }
+    function Yahoo(){
+      var url = "https://search.yahoo.com/search?p=";
+      var search = document.getElementById('search').value;
+      window.open(url+search);
+    }
+    //--------------------------------------------------------------------------
+    //学术搜索
+    function GooglePaper(){
+      var url = "https://scholar.google.com/scholar?hl=en&q=";
+      var search = document.getElementById('search').value;
+      window.open(url+search);
+    }
+    function BingPaper(){
+      var url = "http://cn.bing.com/academic/search?q=";
+      var search = document.getElementById('search').value;
+      var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
+    }
+    function BaiduPaper(){
+      var url = "http://xueshu.baidu.com/s?wd=";
+      var search = document.getElementById('search').value;
+      var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
+    }
+    function CnkiPaper(){
+      var url = "http://scholar.cnki.net/result.aspx?q=";
+      var search = document.getElementById('search').value;
+      var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
+    }
+  //------------------------------------------------------------------------------------------------
+  //翻译
+  function BaiduTranslate(){
+    var url = "http://fanyi.baidu.com/#en/zh/";
+    var search = document.getElementById('search').value;
+    var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
+  }
+  function CnkiTranslate(){
+    var url = "http://dict.cnki.net/dict_result.aspx?searchword=";
+    var search = document.getElementById('search').value;
+    var baiduFrame = document.getElementById('baidu').setAttribute("src" , url+search);
+  }
+  function GoogleTranslate(){
+    var url = "http://translate.google.cn/#en/zh-CN/";
+    var search = document.getElementById('search').value;
+    window.open(url+search);
+  }
+
 </script>
+
+  <script type="text/javascript" language="javascript">
+
+    function changeFrameHeight(){
+      var ifm= document.getElementById("baidu");
+      ifm.height=document.documentElement.clientHeight;
+      ifm.width=0.8*document.documentElement.clientWidth;
+    }
+    window.onresize=function(){
+      changeFrameHeight();
+    }
+
+  </script>
 </html>

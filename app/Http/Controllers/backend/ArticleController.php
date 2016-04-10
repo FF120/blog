@@ -78,7 +78,8 @@ class ArticleController extends Controller
                     if(!is_dir($root_path.$catagory)){
                         mkdir($root_path.$catagory);
                     }
-                    $filename = $result->input('title').".md";
+                    date_default_timezone_set('Asia/Shanghai');
+                    $filename = date("YmdHis").$result->input('title').".md";
                     $filename = iconv('UTF-8','GB2312',$filename);
                     $content = $result->input('content');
                     file_put_contents($root_path.$catagory.DIRECTORY_SEPARATOR.$filename,$content);

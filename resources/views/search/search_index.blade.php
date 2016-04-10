@@ -11,10 +11,6 @@
         </title>
         <link rel="icon" sizes="any" mask="" href="/fd/s/a/hp/bingcn.svg" />
         <meta name="theme-color" content="#4F4F4F" />
-        <link href="/sa/simg/bing_p_rr_teal_min.ico" rel="shortcut icon" />
-        <meta content="微软必应搜索是国际领先的搜索引擎，为中国用户提供网页、图片、视频、词典、翻译、资讯、地图等全球信息搜索服务。"
-        name="description" />
-        <meta content="NOODP" name="ROBOTS" />
     </head>
     
     <body class="zhs zh-CN wkit" onload="hpResize(_ge(&#39;bgDiv&#39;));_ge(&#39;sb_form_q&#39;).focus();if(_w.lb)lb();">
@@ -276,8 +272,10 @@
                             </div>
                         </div>
 						-->
+                        <!--
                         <div id="lap_w" data-ajaxiid="5044" data-date="20160313">
                         </div>
+                        -->
 						<!----页面下面的元素，需要的时候可以添加
                         <div id="hp_bottomCell">
                             <div id="hp_ctrls" class=" cnhpCtrls cnlifeaa">
