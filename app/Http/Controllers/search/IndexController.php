@@ -25,9 +25,6 @@ class IndexController extends Controller
     }
     public function getFind(){
         $search_word = htmlspecialchars($_GET["q"]) ;
-        //下载百度文库的文章
-
-
         echo "你搜索的词语是：".$search_word;
     }
     public function getResult(){
